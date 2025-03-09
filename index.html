@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Easter Egg Hunt</title>
+    <title>Easter Egg Hunt & Puzzle</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
         <div class="score-board">
-            Eggs Found: <span id="eggs-found">0</span> / <span id="total-eggs">10</span>
+            Eggs Found: <span id="eggs-found">0</span> / <span id="total-eggs">13</span>
+            <div class="inventory">
+                Coal Found: <span id="coal-count">0</span>
+            </div>
         </div>
         
         <div class="neighborhood">
@@ -20,6 +23,7 @@
                     <div class="window egg-spot"></div>
                     <div class="window"></div>
                     <div class="door"></div>
+                    <div class="oven" data-needs-coal="true">🔥</div>
                 </div>
             </div>
 
@@ -29,6 +33,7 @@
                     <div class="window"></div>
                     <div class="window egg-spot"></div>
                     <div class="door"></div>
+                    <div class="oven" data-needs-coal="true">🔥</div>
                 </div>
             </div>
 
@@ -38,8 +43,14 @@
                     <div class="window"></div>
                     <div class="window"></div>
                     <div class="door egg-spot"></div>
+                    <div class="oven" data-needs-coal="true">🔥</div>
                 </div>
             </div>
+
+            <!-- Coal spots -->
+            <div class="coal-spot" style="left: 100px; top: 400px;">⚫</div>
+            <div class="coal-spot" style="left: 300px; top: 450px;">⚫</div>
+            <div class="coal-spot" style="left: 500px; top: 420px;">⚫</div>
 
             <!-- Bushes -->
             <div class="bush egg-spot" style="left: 150px; top: 300px;"></div>
@@ -56,10 +67,17 @@
                 <div class="tree-top"></div>
                 <div class="tree-trunk egg-spot"></div>
             </div>
-
-            <!-- Hidden eggs will be placed by JavaScript -->
         </div>
     </div>
+
+    <!-- Draggable coal template (will be cloned by JavaScript) -->
+    <div id="coal-template" class="draggable-coal" style="display: none;">🪨</div>
+
+    <div id="tutorial" class="tutorial">
+        Find coal (⚫) and drag it to ovens (🔥) to create more eggs!
+        <button onclick="this.parentElement.style.display='none'">Got it!</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
