@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Egg Hunt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="score-board">
+            Eggs Found: <span id="eggs-found">0</span> / <span id="total-eggs">10</span>
+        </div>
+        
+        <div class="neighborhood">
+            <!-- Houses -->
+            <div class="house" style="left: 50px; top: 100px;">
+                <div class="roof"></div>
+                <div class="building">
+                    <div class="window egg-spot"></div>
+                    <div class="window"></div>
+                    <div class="door"></div>
+                </div>
+            </div>
+
+            <div class="house" style="left: 300px; top: 150px;">
+                <div class="roof"></div>
+                <div class="building">
+                    <div class="window"></div>
+                    <div class="window egg-spot"></div>
+                    <div class="door"></div>
+                </div>
+            </div>
+
+            <div class="house" style="left: 550px; top: 120px;">
+                <div class="roof"></div>
+                <div class="building">
+                    <div class="window"></div>
+                    <div class="window"></div>
+                    <div class="door egg-spot"></div>
+                </div>
+            </div>
+
+            <!-- Bushes -->
+            <div class="bush egg-spot" style="left: 150px; top: 300px;"></div>
+            <div class="bush egg-spot" style="left: 400px; top: 350px;"></div>
+            <div class="bush" style="left: 650px; top: 320px;"></div>
+
+            <!-- Trees -->
+            <div class="tree" style="left: 200px; top: 50px;">
+                <div class="tree-top egg-spot"></div>
+                <div class="tree-trunk"></div>
+            </div>
+
+            <div class="tree" style="left: 480px; top: 80px;">
+                <div class="tree-top"></div>
+                <div class="tree-trunk egg-spot"></div>
+            </div>
+
+            <!-- Hidden eggs will be placed by JavaScript -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
